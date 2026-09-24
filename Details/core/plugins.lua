@@ -556,7 +556,7 @@
 		statusBar:SetHeight(16)
 		statusBar:SetAlpha(1)
 
-		DetailsFramework:BuildStatusbarAuthorInfo(statusBar)
+		DetailsFramework:BuildStatusbarAuthorInfo(statusBar, "Damage Meter Forever by ", "Foofi")
 
 		local rightClickToBackLabel = Details:CreateRightClickToCloseLabel(statusBar)
 		rightClickToBackLabel:SetPoint("bottomright", statusBar, "bottomright", -150, 5)
