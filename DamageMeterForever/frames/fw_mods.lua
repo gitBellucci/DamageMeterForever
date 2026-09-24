@@ -81,7 +81,7 @@ function gump:NewDetailsButton (parent, container, instancia, func, param1, para
 	new_button.supportFrame:SetFrameLevel(new_button:GetFrameLevel()+1)
 
 	new_button.supportFrame.disable_overlay = new_button.supportFrame:CreateTexture(nil, "overlay")
-	new_button.supportFrame.disable_overlay:SetTexture("Interface\\AddOns\\Details\\images\\button_disable_overlay")
+	new_button.supportFrame.disable_overlay:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\button_disable_overlay")
 	new_button.supportFrame.disable_overlay:SetPoint("topleft", new_button.supportFrame, "topleft")
 	new_button.supportFrame.disable_overlay:SetPoint("bottomright", new_button.supportFrame, "bottomright")
 	new_button.supportFrame.disable_overlay:Hide()
@@ -232,7 +232,7 @@ function gump:NewDetailsButton (parent, container, instancia, func, param1, para
 		new_button:SetPushedTexture("")
 		new_button:SetDisabledTexture("")
 		new_button:SetHighlightTexture("")
-		texture = texture or "Interface\\AddOns\\Details\\images\\default_button"
+		texture = texture or "Interface\\AddOns\\DamageMeterForever\\images\\default_button"
 		new_button.texture = new_button:CreateTexture(nil, "background")
 		
 		if (not rect) then 

@@ -494,7 +494,7 @@ function Details.switch:ShowMe(instancia)
 				tutorialFrame:SetFrameStrata("FULLSCREEN_DIALOG")
 				tutorialFrame:SetAllPoints()
 				tutorialFrame:EnableMouse(true)
-				tutorialFrame:SetBackdrop({bgFile = "Interface\\AddOns\\Details\\images\\background", tile = true, tileSize = 16 })
+				tutorialFrame:SetBackdrop({bgFile = "Interface\\AddOns\\DamageMeterForever\\images\\background", tile = true, tileSize = 16 })
 				tutorialFrame:SetBackdropColor(0.05, 0.05, 0.05, 0.95)
 
 				tutorialFrame.info_label = tutorialFrame:CreateFontString(nil, "overlay", "GameFontNormal")

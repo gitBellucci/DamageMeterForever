@@ -6,7 +6,7 @@
 
 Foofi damage meter for [WoW Classic Forever](https://worldofforever.com/).
 
-Built on the [Details!](https://github.com/Tercioo/Details-Damage-Meter) core (Terciob), adapted for Forever secret API and **C_DamageMeter**. Includes **ThreatForever**.
+Built on the [Details!](https://github.com/Tercioo/Details-Damage-Meter) core (Terciob), adapted for Forever secret API and **C_DamageMeter**. **ThreatForever** is included (Mode → Plugins).
 
 <p align="center">
   <img src="docs/ingame.png" alt="Damage Meter Forever in combat" width="420">
@@ -20,16 +20,17 @@ Built on the [Details!](https://github.com/Tercioo/Details-Damage-Meter) core (T
 
 | Folder (exact name required) | Addon list title |
 |------------------------------|------------------|
-| `DamageMeterForever` | **Damage Meter Forever** |
+| `DamageMeterForever` | **Damage Meter Forever** (includes ThreatForever) |
 | `DamageMeterForever_DataStorage` | **Damage Meter Forever: Storage** |
-| `ThreatForever` | **ThreatForever** |
 
 ## Install
 
-1. Extract the release zip into `World of Warcraft\_classic_beta_\Interface\AddOns\`
-2. You must have those three folders with those exact names
-3. Remove any old `Details` / `Details_DataStorage` / `Details_TinyThreat` folders if present
-4. Restart WoW and enable all three addons
+Prefer the [release zip](https://github.com/gitBellucci/DamageMeterForever/releases/latest). Do **not** use GitHub’s green **Code → Download ZIP** unless you rename folders.
+
+1. Extract so you have exactly **`DamageMeterForever`** and **`DamageMeterForever_DataStorage`**
+2. Put both in `World of Warcraft\_classic_beta_\Interface\AddOns\`
+3. Remove any old `Details` / `Details_DataStorage` / `Details_TinyThreat` / standalone `ThreatForever` folders
+4. Fully restart WoW and enable both addons
 
 ## Use
 
@@ -39,4 +40,5 @@ Built on the [Details!](https://github.com/Tercioo/Details-Damage-Meter) core (T
 
 ## Credits
 
-Details! by Terciob · Forever port & branding by Foofi
+- Core: [Details! Damage Meter](https://github.com/Tercioo/Details-Damage-Meter) by Terciob  
+- Forever port & branding: Foofi

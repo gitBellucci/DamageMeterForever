@@ -367,7 +367,7 @@ function SlashCmdList.DETAILS (msg, editbox)
 		print(loaded, reason, DetailsDataStorage)
 
 	elseif (msg == "chaticon") then
-		Details:Msg("|TInterface\\AddOns\\Details\\images\\icones_barra:" .. 14 .. ":" .. 14 .. ":0:0:256:32:0:32:0:32|tteste")
+		Details:Msg("|TInterface\\AddOns\\DamageMeterForever\\images\\icones_barra:" .. 14 .. ":" .. 14 .. ":0:0:256:32:0:32:0:32|tteste")
 
 	elseif (msg == "align") then
 		local c = RightChatPanel
@@ -444,7 +444,7 @@ function SlashCmdList.DETAILS (msg, editbox)
 		f:SetPoint("center", UIParent, "center", 200, -2)
 		f:SetWidth(300)
 		f:SetHeight(150)
-		f:SetBackdrop({bgFile = "Interface\\AddOns\\Details\\images\\background", tile = true, tileSize = 16, insets = {left = 0, right = 0, top = 0, bottom = 0}})
+		f:SetBackdrop({bgFile = "Interface\\AddOns\\DamageMeterForever\\images\\background", tile = true, tileSize = 16, insets = {left = 0, right = 0, top = 0, bottom = 0}})
 		f:SetBackdropColor(0, 0, 0, 1)
 		f:EnableMouseWheel(true)
 
@@ -454,7 +454,7 @@ function SlashCmdList.DETAILS (msg, editbox)
 			row:SetPoint("topleft", f, "topleft", 10, -(i-1)*21)
 			row:SetWidth(200)
 			row:SetHeight(20)
-			row:SetBackdrop({bgFile = "Interface\\AddOns\\Details\\images\\background", tile = true, tileSize = 16, insets = {left = 0, right = 0, top = 0, bottom = 0}})
+			row:SetBackdrop({bgFile = "Interface\\AddOns\\DamageMeterForever\\images\\background", tile = true, tileSize = 16, insets = {left = 0, right = 0, top = 0, bottom = 0}})
 			local t = row:CreateFontString(nil, "overlay", "GameFontHighlightSmall")
 			t:SetPoint("left", row, "left")
 			row.text = t
@@ -3252,7 +3252,7 @@ recentPlayerTable = {
 
 					--cast teleport button
 					local teleportButton = buttonsCreated[index]
-					teleportButton:SetBackdrop({bgFile = "Interface\\AddOns\\Details\\images\\background", tile = true, tileSize = 16, insets = {left = 0, right = 0, top = 0, bottom = 0}})
+					teleportButton:SetBackdrop({bgFile = "Interface\\AddOns\\DamageMeterForever\\images\\background", tile = true, tileSize = 16, insets = {left = 0, right = 0, top = 0, bottom = 0}})
 					teleportButton:SetBackdropColor(0.2, 0.2, 0.2, 0.8)
 
 					local blockTeleporterButton = CreateFrame("button", "$parentBlockTeleporterButton", line)

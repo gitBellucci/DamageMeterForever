@@ -2146,7 +2146,7 @@ function Details:Desagrupar (instancia, lado, lado2)
 					if (index == 2) then  -- index � o codigo do snap
 						--esta_instancia.baseframe.rodape.StatusBarLeftAnchor:SetPoint("left", esta_instancia.baseframe.rodape.top_bg, "left", 5, 58)
 						--esta_instancia.baseframe.rodape.StatusBarCenterAnchor:SetPoint("center", esta_instancia.baseframe.rodape.top_bg, "center", 0, 58)
-						--esta_instancia.baseframe.rodape.esquerdo:SetTexture("Interface\\AddOns\\Details\\images\\bar_down_left")
+						--esta_instancia.baseframe.rodape.esquerdo:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\bar_down_left")
 						--esta_instancia.baseframe.rodape.esquerdo.have_snap = nil
 					end
 
@@ -2198,9 +2198,9 @@ function Details:SnapTextures (remove)
 		if (esta_instancia:IsAtiva()) then
 			if (esta_instancia.baseframe.rodape.esquerdo.have_snap) then
 				if (remove) then
-					--esta_instancia.baseframe.rodape.esquerdo:SetTexture("Interface\\AddOns\\Details\\images\\bar_down_left")
+					--esta_instancia.baseframe.rodape.esquerdo:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\bar_down_left")
 				else
-					--esta_instancia.baseframe.rodape.esquerdo:SetTexture("Interface\\AddOns\\Details\\images\\bar_down_left_snap")
+					--esta_instancia.baseframe.rodape.esquerdo:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\bar_down_left_snap")
 				end
 			end
 		end
@@ -2287,7 +2287,7 @@ end
 		end
 
 		--setup default wallpaper
-		new_instance.wallpaper.texture = "Interface\\AddOns\\Details\\images\\background"
+		new_instance.wallpaper.texture = "Interface\\AddOns\\DamageMeterForever\\images\\background"
 
 		--finish
 		return new_instance
@@ -2309,7 +2309,7 @@ end
 		--setup all config
 		newInstance:ResetInstanceConfig()
 		--setup default wallpaper
-		newInstance.wallpaper.texture = "Interface\\AddOns\\Details\\images\\background"
+		newInstance.wallpaper.texture = "Interface\\AddOns\\DamageMeterForever\\images\\background"
 
 		--internal stuff
 		newInstance.barras = {} --store the bars which shows data to the user
@@ -3552,10 +3552,10 @@ end
 local menu_wallpaper_custom_color = {1, 0, 0, 1}
 local wallpaper_bg_color = {.8, .8, .8, 0.2}
 local menu_icones = {
-	"Interface\\AddOns\\Details\\images\\atributos_icones_damage",
-	"Interface\\AddOns\\Details\\images\\atributos_icones_heal",
-	"Interface\\AddOns\\Details\\images\\atributos_icones_energyze",
-	"Interface\\AddOns\\Details\\images\\atributos_icones_misc"
+	"Interface\\AddOns\\DamageMeterForever\\images\\atributos_icones_damage",
+	"Interface\\AddOns\\DamageMeterForever\\images\\atributos_icones_heal",
+	"Interface\\AddOns\\DamageMeterForever\\images\\atributos_icones_energyze",
+	"Interface\\AddOns\\DamageMeterForever\\images\\atributos_icones_misc"
 }
 
 Details.menuIcons = menu_icones
@@ -3583,7 +3583,7 @@ function Details:MontaAtributosOption (instancia, func)
 	for i = 1, atributos[0] do --[0] armazena quantos atributos existem
 
 		CoolTip:AddMenu (1, func, nil, i, nil, atributos.lista[i], nil, true)
-		CoolTip:AddIcon ("Interface\\AddOns\\Details\\images\\atributos_icones", 1, 1, 20, 20, p*(i-1), p*(i), 0, 1)
+		CoolTip:AddIcon ("Interface\\AddOns\\DamageMeterForever\\images\\atributos_icones", 1, 1, 20, 20, p*(i-1), p*(i), 0, 1)
 
 		if (Details.tooltip.submenu_wallpaper) then
 			if (i == 1) then
@@ -3647,7 +3647,7 @@ function Details:MontaAtributosOption (instancia, func)
 	CoolTip:AddLine("$div", nil, 1, -3, 1)
 
 	CoolTip:AddMenu (1, func, nil, 5, nil, atributos.lista[5], nil, true)
-	CoolTip:AddIcon ("Interface\\AddOns\\Details\\images\\atributos_icones", 1, 1, 20, 20, p*(5-1), p*(5), 0, 1)
+	CoolTip:AddIcon ("Interface\\AddOns\\DamageMeterForever\\images\\atributos_icones", 1, 1, 20, 20, p*(5-1), p*(5), 0, 1)
 
 	CoolTip:AddMenu (2, Details.OpenCustomDisplayWindow, nil, nil, nil, Loc ["STRING_CUSTOM_NEW"], nil, true)
 	CoolTip:AddIcon ([[Interface\CHATFRAME\UI-ChatIcon-Maximize-Up]], 2, 1, 20, 20, 3/32, 29/32, 3/32, 29/32)

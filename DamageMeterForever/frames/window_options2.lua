@@ -225,13 +225,13 @@ function Details222.OptionsPanel.InitializeOptionsWindow(instance)
         local fillbars = detailsFramework:NewButton(optionsFrame, _, "$parentCreateExampleBarsButton", nil, 140, 20, create_test_bars_func, nil, nil, nil, Loc ["STRING_OPTIONS_TESTBARS"], 1)
         PixelUtil.SetPoint(fillbars, "topleft", optionsFrame.widget, "topleft", startX-8, -30)
         fillbars:SetTemplate(options_button_template)
-        fillbars:SetIcon ("Interface\\AddOns\\Details\\images\\icons", nil, nil, nil, {323/512, 365/512, 42/512, 78/512}, {1, 1, 1, 0.6}, 4, 2)
+        fillbars:SetIcon ("Interface\\AddOns\\DamageMeterForever\\images\\icons", nil, nil, nil, {323/512, 365/512, 42/512, 78/512}, {1, 1, 1, 0.6}, 4, 2)
 
     --change log
         local changelog = detailsFramework:NewButton(optionsFrame, _, "$parentOpenChangeLogButton", nil, 140, 20, Details.OpenNewsWindow, "change_log", nil, nil, Loc ["STRING_OPTIONS_CHANGELOG"], 1)
         changelog:SetPoint("left", fillbars, "right", 10, 0)
         changelog:SetTemplate(options_button_template)
-        changelog:SetIcon ("Interface\\AddOns\\Details\\images\\icons", nil, nil, nil, {367/512, 399/512, 43/512, 76/512}, {1, 1, 1, 0.8}, 4, 2)
+        changelog:SetIcon ("Interface\\AddOns\\DamageMeterForever\\images\\icons", nil, nil, nil, {367/512, 399/512, 43/512, 76/512}, {1, 1, 1, 0.8}, 4, 2)
 
     --search field
         local searchBox = detailsFramework:CreateTextEntry(optionsFrame, function()end, 140, 20, _, _, _, options_dropdown_template)

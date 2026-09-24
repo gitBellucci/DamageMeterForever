@@ -1010,7 +1010,7 @@ function atributo_energy:ToolTipRegenRecebido (instancia, numero, barra, keydown
 		if (classe == "UNKNOW") then
 			GameCooltip:AddIcon ("Interface\\LFGFRAME\\LFGROLE_BW", nil, nil, icon_size.W, icon_size.H, .25, .5, 0, 1)
 		else
-			GameCooltip:AddIcon ("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, icon_size.W, icon_size.H, _unpack(_detalhes.class_coords [classe]))
+			GameCooltip:AddIcon ("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, icon_size.W, icon_size.H, _unpack(_detalhes.class_coords [classe]))
 		end
 
 	end
@@ -1309,7 +1309,7 @@ function atributo_energy:MontaDetalhesRegenRecebido (nome, barra)
 		barra.lineText4:SetText(_detalhes:comma_value (tabela[2]) .." (" .. _cstr("%.1f", tabela[2] / total_regenerado * 100) .."%)")
 
 		barra.textura:SetStatusBarColor(_unpack(_detalhes.class_colors [tabela[3]]))
-		barra.icone:SetTexture("Interface\\AddOns\\Details\\images\\classes_small")
+		barra.icone:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\classes_small")
 
 		barra.icone:SetTexCoord(_unpack(_detalhes.class_coords [tabela[3]]))
 

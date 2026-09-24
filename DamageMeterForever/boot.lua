@@ -16,6 +16,8 @@
 			wipe(__details_debug.prescience_timeline)
 		end
 		local addonName, Details222 = ...
+		-- Folder name after rename; ADDON_LOADED and metadata use this (keep "Details" as alias for plugins).
+		Details.AddonFolderName = addonName or "DamageMeterForever"
 		local version, build, date, tvs = GetBuildInfo()
 		Details.build_counter = 14850
 		Details.alpha_build_counter = 14850 --if this is higher than the regular counter, use it instead

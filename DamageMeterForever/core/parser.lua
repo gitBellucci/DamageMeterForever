@@ -6735,7 +6735,8 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 
 	function Details.parser_functions:ADDON_LOADED(...)
 		local addonName = select(1, ...)
-		if (addonName == "Details") then
+		-- Match current folder name (DamageMeterForever) and legacy "Details" if someone still uses that folder.
+		if (addonName == Details.AddonFolderName or addonName == "DamageMeterForever" or addonName == "Details") then
 			TurnTheSpeakersOn()
 		end
 	end

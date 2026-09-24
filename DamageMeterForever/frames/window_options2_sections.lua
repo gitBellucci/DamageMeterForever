@@ -2472,10 +2472,10 @@ do
 
         local buildIconStyleMenu = function()
             local iconMenu = {
-                {value = "Interface\\AddOns\\Details\\images\\toolbar_icons", label = "Set 1", icon = "Interface\\AddOns\\Details\\images\\toolbar_icons", texcoord = {0, 0.125, 0, 1}, onclick = on_select_icon_set},
-                {value = "Interface\\AddOns\\Details\\images\\toolbar_icons_shadow", label = "Set 2", icon = "Interface\\AddOns\\Details\\images\\toolbar_icons_shadow", texcoord = {0, 0.125, 0, 1}, onclick = on_select_icon_set},
-                {value = "Interface\\AddOns\\Details\\images\\toolbar_icons_2", label = "Set 3", icon = "Interface\\AddOns\\Details\\images\\toolbar_icons_2", texcoord = {0, 0.125, 0, 1}, onclick = on_select_icon_set},
-                {value = "Interface\\AddOns\\Details\\images\\toolbar_icons_2_shadow", label = "Set 4", icon = "Interface\\AddOns\\Details\\images\\toolbar_icons_2_shadow", texcoord = {0, 0.125, 0, 1}, onclick = on_select_icon_set},
+                {value = "Interface\\AddOns\\DamageMeterForever\\images\\toolbar_icons", label = "Set 1", icon = "Interface\\AddOns\\DamageMeterForever\\images\\toolbar_icons", texcoord = {0, 0.125, 0, 1}, onclick = on_select_icon_set},
+                {value = "Interface\\AddOns\\DamageMeterForever\\images\\toolbar_icons_shadow", label = "Set 2", icon = "Interface\\AddOns\\DamageMeterForever\\images\\toolbar_icons_shadow", texcoord = {0, 0.125, 0, 1}, onclick = on_select_icon_set},
+                {value = "Interface\\AddOns\\DamageMeterForever\\images\\toolbar_icons_2", label = "Set 3", icon = "Interface\\AddOns\\DamageMeterForever\\images\\toolbar_icons_2", texcoord = {0, 0.125, 0, 1}, onclick = on_select_icon_set},
+                {value = "Interface\\AddOns\\DamageMeterForever\\images\\toolbar_icons_2_shadow", label = "Set 4", icon = "Interface\\AddOns\\DamageMeterForever\\images\\toolbar_icons_2_shadow", texcoord = {0, 0.125, 0, 1}, onclick = on_select_icon_set},
             }
             return iconMenu
         end
@@ -5191,25 +5191,25 @@ do
 
             --background grid
             local icon1 = DF:NewImage(sectionFrame, nil, 128, 64, "artwork", nil, nil, "$parentIcon1")
-            icon1:SetTexture("Interface\\AddOns\\Details\\images\\icons")
+            icon1:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons")
             icon1:SetPoint("topleft", sectionFrame, "topleft", previewX, previewY)
             icon1:SetDrawLayer("artwork", 1)
             icon1:SetTexCoord(0.337890625, 0.5859375, 0.59375, 0.716796875-0.0009765625) --173 304 300 367
 
             local icon2 = DF:NewImage(sectionFrame, nil, 128, 64, "artwork", nil, nil, "$parentIcon2")
-            icon2:SetTexture("Interface\\AddOns\\Details\\images\\icons")
+            icon2:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons")
             icon2:SetPoint("left", icon1.widget, "right", -1, 0)
             icon2:SetDrawLayer("artwork", 1)
             icon2:SetTexCoord(0.337890625, 0.5859375, 0.59375, 0.716796875-0.0009765625) --173 304 300 367
 
             local icon3 = DF:NewImage(sectionFrame, nil, 128, 64, "artwork", nil, nil, "$parentIcon3")
-            icon3:SetTexture("Interface\\AddOns\\Details\\images\\icons")
+            icon3:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons")
             icon3:SetPoint("top", icon1.widget, "bottom")
             icon3:SetDrawLayer("artwork", 1)
             icon3:SetTexCoord(0.337890625, 0.5859375, 0.59375+0.0009765625, 0.716796875) --173 304 300 367
 
             local icon4 = DF:NewImage(sectionFrame, nil, 128, 64, "artwork", nil, nil, "$parentIcon4")
-            icon4:SetTexture("Interface\\AddOns\\Details\\images\\icons")
+            icon4:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons")
             icon4:SetPoint("left", icon3.widget, "right", -1, 0)
             icon4:SetDrawLayer("artwork", 1)
             icon4:SetTexCoord(0.337890625, 0.5859375, 0.59375+0.0009765625, 0.716796875) --173 304 300 367
@@ -5224,7 +5224,7 @@ do
 
             local L1 = sectionFrame:CreateTexture(nil, "overlay")
             L1:SetPoint("topleft", preview, "topleft")
-            L1:SetTexture("Interface\\AddOns\\Details\\images\\icons")
+            L1:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons")
             L1:SetTexCoord(0.13671875+0.0009765625, 0.234375, 0.29296875, 0.1953125+0.0009765625)
             L1:SetSize(w, h)
             L1:SetDrawLayer("overlay", 2)
@@ -5232,7 +5232,7 @@ do
 
             local L2 = sectionFrame:CreateTexture(nil, "overlay")
             L2:SetPoint("bottomleft", preview, "bottomleft")
-            L2:SetTexture("Interface\\AddOns\\Details\\images\\icons")
+            L2:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons")
             L2:SetTexCoord(0.13671875+0.0009765625, 0.234375, 0.1953125+0.0009765625, 0.29296875)
             L2:SetSize(w, h)
             L2:SetDrawLayer("overlay", 2)
@@ -5240,7 +5240,7 @@ do
 
             local L3 = sectionFrame:CreateTexture(nil, "overlay")
             L3:SetPoint("bottomright", preview, "bottomright", 0, 0)
-            L3:SetTexture("Interface\\AddOns\\Details\\images\\icons")
+            L3:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons")
             L3:SetTexCoord(0.234375, 0.13671875-0.0009765625, 0.1953125+0.0009765625, 0.29296875)
             L3:SetSize(w, h)
             L3:SetDrawLayer("overlay", 5)
@@ -5248,7 +5248,7 @@ do
 
             local L4 = sectionFrame:CreateTexture(nil, "overlay")
             L4:SetPoint("topright", preview, "topright", 0, 0)
-            L4:SetTexture("Interface\\AddOns\\Details\\images\\icons")
+            L4:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons")
             L4:SetTexCoord(0.234375, 0.13671875-0.0009765625, 0.29296875, 0.1953125+0.0009765625)
             L4:SetSize(w, h)
             L4:SetDrawLayer("overlay", 5)
@@ -5402,7 +5402,7 @@ do
                     if (value) then
                         --first time using a wallpaper
                         if (not currentInstance.wallpaper.texture) then
-                            currentInstance.wallpaper.texture = "Interface\\AddOns\\Details\\images\\background"
+                            currentInstance.wallpaper.texture = "Interface\\AddOns\\DamageMeterForever\\images\\background"
                         end
                         editInstanceSetting(currentInstance, "InstanceWallpaper", true)
                     else

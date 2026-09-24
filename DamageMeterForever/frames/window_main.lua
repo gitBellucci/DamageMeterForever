@@ -5448,7 +5448,7 @@ function Details:InstanceWallpaper(texture, anchor, alpha, texCoord, width, heig
 	end
 
 	if (not wallpaper.texture and not texture) then
-		texture = "Interface\\AddOns\\Details\\images\\background"
+		texture = "Interface\\AddOns\\DamageMeterForever\\images\\background"
 		texCoord = {0, 1, 0, 0.7}
 		alpha = 0.5
 		width, height = self:GetSize()
@@ -6271,10 +6271,10 @@ function Details:ToolbarMenuSetButtons(_mode, _segment, _attributes, _report, _r
 				self.baseframe.SwapDamageMeterButton:SetPoint("right", anchorFrame, "left", space, 0)
 			end
 
-			self.baseframe.SwapDamageMeterButton:SetNormalTexture("Interface\\AddOns\\Details\\images\\minimap.tga")
+			self.baseframe.SwapDamageMeterButton:SetNormalTexture("Interface\\AddOns\\DamageMeterForever\\images\\minimap.tga")
 
 			if Details222.BParser.IsDamageMeterSwapped() then
-				self.baseframe.SwapDamageMeterButton:GetNormalTexture():SetTexture("Interface\\AddOns\\Details\\images\\minimap.tga")
+				self.baseframe.SwapDamageMeterButton:GetNormalTexture():SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\minimap.tga")
 			else
 				self.baseframe.SwapDamageMeterButton:GetNormalTexture():SetAtlas("128-Store-Main")
 			end
@@ -6969,7 +6969,7 @@ local buildSegmentTooltip = function(self, deltaTime, allInOneWindowFrame)
 
 								local combatIcon, categoryIcon = thisCombat:GetCombatIcon()
 
-								local skull = "|TInterface\\AddOns\\Details\\images\\icons:16:16:0:0:512:512:496:512:0:16|t"
+								local skull = "|TInterface\\AddOns\\DamageMeterForever\\images\\icons:16:16:0:0:512:512:496:512:0:16|t"
 								local skullIcon = detailsFramework:CreateAtlasString(Details:GetTextureAtlas("segment-icon-boss"))
 
 								--main cooltip frame
@@ -7546,9 +7546,47 @@ function Details:RefreshMicroDisplays()
 	Details.StatusBar:UpdateOptions (self)
 end
 
+local function ResolveSkinName(skinName)
+	if (skinName == "DamageForever" or skinName == "no skin" or skinName == "" or not skinName) then
+		return Details.default_skin_to_use or "Damage Meter Forever"
+	end
+	return skinName
+end
+
+-- Folder rename: SavedVariables / profiles may still store Interface\AddOns\Details\ texture paths.
+local function RemapDetailsAddonPath(path)
+	if (type(path) ~= "string") then
+		return path
+	end
+	if (path:find("AddOns\\Details\\", 1, true) or path:find("AddOns/Details/", 1, true)) then
+		path = path:gsub("AddOns\\Details\\", "AddOns\\DamageMeterForever\\")
+		path = path:gsub("AddOns/Details/", "AddOns/DamageMeterForever/")
+	end
+	return path
+end
+
+local function RemapInstanceTexturePaths(instance)
+	if (not instance) then
+		return
+	end
+	instance.toolbar_icon_file = RemapDetailsAddonPath(instance.toolbar_icon_file)
+	if (type(instance.row_info) == "table") then
+		instance.row_info.icon_file = RemapDetailsAddonPath(instance.row_info.icon_file)
+		instance.row_info.spec_file = RemapDetailsAddonPath(instance.row_info.spec_file)
+		instance.row_info.texture_file = RemapDetailsAddonPath(instance.row_info.texture_file)
+		instance.row_info.texture_background_file = RemapDetailsAddonPath(instance.row_info.texture_background_file)
+		instance.row_info.texture_custom_file = RemapDetailsAddonPath(instance.row_info.texture_custom_file)
+	end
+	if (type(instance.wallpaper) == "table") then
+		instance.wallpaper.texture = RemapDetailsAddonPath(instance.wallpaper.texture)
+	end
+end
+
 function Details:WaitForSkin()
-	local skinName = self.skin
-	local hasSkinInCache = Details.installed_skins_cache[skinName]
+	local skinName = ResolveSkinName(self.skin)
+	self.skin = skinName
+
+	local hasSkinInCache = Details.installed_skins_cache and Details.installed_skins_cache[skinName]
 	if (hasSkinInCache) then
 		Details:InstallSkin(skinName, hasSkinInCache)
 		local skin = Details.skins[skinName]
@@ -7557,11 +7595,25 @@ function Details:WaitForSkin()
 		end
 	end
 
-	Details.waitingForSkins = Details.waitingForSkins or {}
-	Details.waitingForSkins[self:GetId()] = skinName
+	local instanceId = self.GetId and self:GetId()
+	if (instanceId and skinName) then
+		Details.waitingForSkins = Details.waitingForSkins or {}
+		Details.waitingForSkins[instanceId] = skinName
+	end
 
-	local defaultSkin = Details.default_skin_to_use
+	local defaultSkin = Details.default_skin_to_use or "Damage Meter Forever"
 	local skin = Details.skins[defaultSkin]
+	if (not skin) then
+		skin = Details.skins["Minimalistic"]
+		defaultSkin = skin and "Minimalistic" or defaultSkin
+	end
+	if (not skin) then
+		for name, skinTable in pairs(Details.skins) do
+			defaultSkin = name
+			skin = skinTable
+			break
+		end
+	end
 	self.skin = defaultSkin
 	return skin
 end
@@ -7570,11 +7622,15 @@ function Details:ChangeSkin(skin_name)
 	if (not skin_name) then
 		skin_name = self.skin
 	end
+	skin_name = ResolveSkinName(skin_name)
+	RemapInstanceTexturePaths(self)
 
 	local this_skin = Details.skins[skin_name]
 	if (not this_skin) then
-		local tempSkin = Details:WaitForSkin()
-		this_skin = tempSkin
+		this_skin = self:WaitForSkin()
+	end
+	if (not this_skin) then
+		return
 	end
 
 	local just_updating = false

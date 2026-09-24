@@ -361,7 +361,7 @@
 
 				if (class) then
 					local coords = CLASS_ICON_TCOORDS [class]
-					class_color = "|TInterface\\AddOns\\Details\\images\\classes_small_alpha:12:12:0:0:128:128:" .. coords[1]/2*128 .. ":" .. coords[2]/2*128 .. ":" .. coords[3]/2*128 .. ":" .. coords[4]/2*128 .. "|t |c" .. RAID_CLASS_COLORS [class].colorStr
+					class_color = "|TInterface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha:12:12:0:0:128:128:" .. coords[1]/2*128 .. ":" .. coords[2]/2*128 .. ":" .. coords[3]/2*128 .. ":" .. coords[4]/2*128 .. "|t |c" .. RAID_CLASS_COLORS [class].colorStr
 				end
 
 				if (second < 10) then
@@ -466,12 +466,12 @@
 
 			if (class) then
 				local coords = CLASS_ICON_TCOORDS [class]
-				class_color = "|TInterface\\AddOns\\Details\\images\\classes_small_alpha:12:12:0:0:128:128:" .. coords[1]/2*128 .. ":" .. coords[2]/2*128 .. ":" .. coords[3]/2*128 .. ":" .. coords[4]/2*128 .. "|t |c" .. RAID_CLASS_COLORS [class].colorStr
+				class_color = "|TInterface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha:12:12:0:0:128:128:" .. coords[1]/2*128 .. ":" .. coords[2]/2*128 .. ":" .. coords[3]/2*128 .. ":" .. coords[4]/2*128 .. "|t |c" .. RAID_CLASS_COLORS [class].colorStr
 			end
 
 			if (class2) then
 				local coords = CLASS_ICON_TCOORDS [class2]
-				class_color2 = " -> |TInterface\\AddOns\\Details\\images\\classes_small_alpha:12:12:0:0:128:128:" .. coords[1]/2*128 .. ":" .. coords[2]/2*128 .. ":" .. coords[3]/2*128 .. ":" .. coords[4]/2*128 .. "|t |c" .. RAID_CLASS_COLORS [class2].colorStr
+				class_color2 = " -> |TInterface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha:12:12:0:0:128:128:" .. coords[1]/2*128 .. ":" .. coords[2]/2*128 .. ":" .. coords[3]/2*128 .. ":" .. coords[4]/2*128 .. "|t |c" .. RAID_CLASS_COLORS [class2].colorStr
 				alvo_name = _detalhes:GetOnlyName(alvo_name)
 			else
 				alvo_name = ""
@@ -562,7 +562,7 @@
 
 				if (class) then
 					local coords = CLASS_ICON_TCOORDS [class]
-					class_color = "|TInterface\\AddOns\\Details\\images\\classes_small_alpha:12:12:0:0:256:256:" .. coords[1]/2*256 .. ":" .. coords[2]/2*256 .. ":" .. coords[3]/2*256 .. ":" .. coords[4]/2*256 .. "|t |c" .. RAID_CLASS_COLORS [class].colorStr
+					class_color = "|TInterface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha:12:12:0:0:256:256:" .. coords[1]/2*256 .. ":" .. coords[2]/2*256 .. ":" .. coords[3]/2*256 .. ":" .. coords[4]/2*256 .. "|t |c" .. RAID_CLASS_COLORS [class].colorStr
 				end
 				msg = "Death: " .. class_color .. alvo_name .. "|r ->"
 			else

@@ -384,9 +384,9 @@ do
 			local L, R, T, B = unpack(Details.class_specs_coords[spec])
 			if (L) then
 				if (useAlphaIcons) then
-					specString = "|TInterface\\AddOns\\Details\\images\\spec_icons_normal_alpha:" .. iconSize .. ":" .. iconSize .. ":0:0:512:512:" .. (L * 512) .. ":" .. (R * 512) .. ":" .. (T * 512) .. ":" .. (B * 512) .. "|t"
+					specString = "|TInterface\\AddOns\\DamageMeterForever\\images\\spec_icons_normal_alpha:" .. iconSize .. ":" .. iconSize .. ":0:0:512:512:" .. (L * 512) .. ":" .. (R * 512) .. ":" .. (T * 512) .. ":" .. (B * 512) .. "|t"
 				else
-					specString = "|TInterface\\AddOns\\Details\\images\\spec_icons_normal:" .. iconSize .. ":" .. iconSize .. ":0:0:512:512:" .. (L * 512) .. ":" .. (R * 512) .. ":" .. (T * 512) .. ":" .. (B * 512) .. "|t"
+					specString = "|TInterface\\AddOns\\DamageMeterForever\\images\\spec_icons_normal:" .. iconSize .. ":" .. iconSize .. ":0:0:512:512:" .. (L * 512) .. ":" .. (R * 512) .. ":" .. (T * 512) .. ":" .. (B * 512) .. "|t"
 				end
 				return specString .. " " .. thisString
 			end
@@ -398,9 +398,9 @@ do
 			if (L) then
 				local imageSize = 128
 				if (useAlphaIcons) then
-					classString = "|TInterface\\AddOns\\Details\\images\\classes_small_alpha:" .. iconSize .. ":" .. iconSize .. ":0:0:" .. imageSize .. ":" .. imageSize .. ":" .. (L * imageSize) .. ":" .. (R * imageSize) .. ":" .. (T * imageSize) .. ":" .. (B * imageSize) .. "|t"
+					classString = "|TInterface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha:" .. iconSize .. ":" .. iconSize .. ":0:0:" .. imageSize .. ":" .. imageSize .. ":" .. (L * imageSize) .. ":" .. (R * imageSize) .. ":" .. (T * imageSize) .. ":" .. (B * imageSize) .. "|t"
 				else
-					classString = "|TInterface\\AddOns\\Details\\images\\classes_small:" .. iconSize .. ":" .. iconSize .. ":0:0:" .. imageSize .. ":" .. imageSize .. ":" .. (L * imageSize) .. ":" .. (R * imageSize) .. ":" .. (T * imageSize) .. ":" .. (B * imageSize) .. "|t"
+					classString = "|TInterface\\AddOns\\DamageMeterForever\\images\\classes_small:" .. iconSize .. ":" .. iconSize .. ":0:0:" .. imageSize .. ":" .. imageSize .. ":" .. (L * imageSize) .. ":" .. (R * imageSize) .. ":" .. (T * imageSize) .. ":" .. (B * imageSize) .. "|t"
 				end
 				return classString .. " " .. thisString
 			end

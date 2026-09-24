@@ -1201,7 +1201,7 @@ function healingClass:ToolTip_HealingDenied (instancia, numero, barra, keydown)
 				if (classe == "UNKNOW") then
 					GameCooltip:AddIcon ("Interface\\LFGFRAME\\LFGROLE_BW", nil, nil, 14, 14, .25, .5, 0, 1)
 				else
-					GameCooltip:AddIcon ("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, 14, 14, _unpack(_detalhes.class_coords [classe]))
+					GameCooltip:AddIcon ("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, 14, 14, _unpack(_detalhes.class_coords [classe]))
 				end
 			end
 
@@ -1266,7 +1266,7 @@ function healingClass:ToolTip_HealingDenied (instancia, numero, barra, keydown)
 				if (classe == "UNKNOW") then
 					GameCooltip:AddIcon ("Interface\\LFGFRAME\\LFGROLE_BW", nil, nil, 14, 14, .25, .5, 0, 1)
 				else
-					GameCooltip:AddIcon ("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, 14, 14, _unpack(_detalhes.class_coords [classe]))
+					GameCooltip:AddIcon ("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, 14, 14, _unpack(_detalhes.class_coords [classe]))
 				end
 			end
 	end
@@ -1350,7 +1350,7 @@ function healingClass:ToolTip_HealingTaken (instancia, numero, barra, keydown)
 				local texture, l, r, t, b = _detalhes:GetSpecIcon (specID, false)
 				GameCooltip:AddIcon (texture, 1, 1, lineHeight, lineHeight, l, r, t, b)
 			else
-				GameCooltip:AddIcon ("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, lineHeight, lineHeight, _unpack(_detalhes.class_coords [classe]))
+				GameCooltip:AddIcon ("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, lineHeight, lineHeight, _unpack(_detalhes.class_coords [classe]))
 			end
 		end
 
@@ -1589,7 +1589,7 @@ function healingClass:ToolTip_HealingDone (instance, numero, barra, keydown)
 				if (classe == "UNKNOW") then
 					GameCooltip:AddIcon ("Interface\\LFGFRAME\\LFGROLE_BW", nil, nil, icon_size.W, icon_size.H, .25, .5, 0, 1)
 				else
-					GameCooltip:AddIcon ("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, icon_size.W, icon_size.H, _unpack(_detalhes.class_coords [classe]))
+					GameCooltip:AddIcon ("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, icon_size.W, icon_size.H, _unpack(_detalhes.class_coords [classe]))
 				end
 			end
 		end
@@ -1898,7 +1898,7 @@ function healingClass:MontaInfoHealTaken()
 		end
 
 		local formated_value = SelectedToKFunction (_, _math_floor(tabela[2]))
-		self:UpdadeInfoBar(barra, index, tabela[1], tabela[1], tabela[2], formated_value, max_, tabela[3], "Interface\\AddOns\\Details\\images\\classes_small", true, texCoords)
+		self:UpdadeInfoBar(barra, index, tabela[1], tabela[1], tabela[2], formated_value, max_, tabela[3], "Interface\\AddOns\\DamageMeterForever\\images\\classes_small", true, texCoords)
 	end
 
 end

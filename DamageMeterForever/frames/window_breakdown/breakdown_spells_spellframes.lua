@@ -569,7 +569,7 @@ function spellsTab.CreateSpellBlock(spellBlockContainer, index) --~breakdownspel
 	--overlay texture which fade in and out when the spell block is hovered over
 	--is only possible to hover over a spell block when the spellbar is selected
 	spellBlock.overlay = spellBlock:CreateTexture("$parentOverlay", "artwork")
-	spellBlock.overlay:SetTexture("Interface\\AddOns\\Details\\images\\overlay_detalhes")
+	spellBlock.overlay:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\overlay_detalhes")
 	spellBlock.overlay:SetPoint("topleft", spellBlock, "topleft", -8, 8)
 	spellBlock.overlay:SetPoint("bottomright", spellBlock, "bottomright", 26, -14)
 	Details.FadeHandler.Fader(spellBlock.overlay, 1) --hide
@@ -583,7 +583,7 @@ function spellsTab.CreateSpellBlock(spellBlockContainer, index) --~breakdownspel
 
 	--spark texture
 	spellBlock.sparkTexture = spellBlock:CreateTexture("$parentOverlaySparkTexture", "overlay")
-	spellBlock.sparkTexture:SetTexture("Interface\\AddOns\\Details\\images\\bar_detalhes2_end")
+	spellBlock.sparkTexture:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\bar_detalhes2_end")
 	spellBlock.sparkTexture:SetBlendMode("ADD")
 
     local gradientDown = detailsFramework:CreateTexture(spellBlock, {gradient = "vertical", fromColor = {0, 0, 0, 0.1}, toColor = "transparent"}, 1, spellBlock:GetHeight(), "background", {0, 1, 0, 1})

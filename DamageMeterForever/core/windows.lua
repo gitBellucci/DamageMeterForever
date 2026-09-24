@@ -1266,7 +1266,7 @@
 
 			updatewindow_frame.gnoma = updatewindow_frame:CreateTexture(nil, "artwork")
 			updatewindow_frame.gnoma:SetPoint("topright", updatewindow_frame, "topright", -3, -59)
-			updatewindow_frame.gnoma:SetTexture("Interface\\AddOns\\Details\\images\\icons2")
+			updatewindow_frame.gnoma:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons2")
 			updatewindow_frame.gnoma:SetSize(105*1.05, 107*1.05)
 			updatewindow_frame.gnoma:SetTexCoord(0.2021484375, 0, 0.7919921875, 1)
 

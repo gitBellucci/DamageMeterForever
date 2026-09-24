@@ -1006,7 +1006,8 @@ function ThreatMeter:OnEvent (_, event, ...)
 	elseif (event == "ADDON_LOADED") then
 		local AddonName = select (1, ...)
 
-		if (AddonName == PLUGIN_FRAME_NAME or AddonName == "ThreatForever") then
+		-- Embedded in DamageMeterForever: Details fires ADDON_LOADED with the plugin frame name on PLAYER_LOGIN.
+		if (AddonName == PLUGIN_FRAME_NAME or AddonName == "ThreatForever" or AddonName == "DamageMeterForever") then
 			local function tryInstall()
 				if (not _G.Details or not _G.Details.InstallPlugin) then
 					return false
@@ -1020,7 +1021,7 @@ function ThreatMeter:OnEvent (_, event, ...)
 				local install, saveddata = _G.Details:InstallPlugin (
 					"RAID",
 					Loc["STRING_PLUGIN_NAME"],
-					"Interface\\AddOns\\ThreatForever\\Logo.png",
+					"Interface\\AddOns\\DamageMeterForever\\plugins\\ThreatForever\\Logo.png",
 					ThreatMeter,
 					"DETAILS_PLUGIN_THREAT_FOREVER",
 					MINIMAL_DETAILS_VERSION_REQUIRED,

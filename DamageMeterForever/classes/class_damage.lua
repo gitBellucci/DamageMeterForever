@@ -65,7 +65,7 @@
 
 	--templates
 	local byspell_tooltip_background = {value = 100, color = {0.1960, 0.1960, 0.1960, 0.9097}, texture = [[Interface\AddOns\DamageMeterForever\images\bar_background_dark]]}
-	local enemies_background = {value = 100, color = {0.1960, 0.1960, 0.1960, 0.8697}, texture = "Interface\\AddOns\\Details\\images\\bar_background2"}
+	local enemies_background = {value = 100, color = {0.1960, 0.1960, 0.1960, 0.8697}, texture = "Interface\\AddOns\\DamageMeterForever\\images\\bar_background2"}
 	Details.tooltip_key_overlay1 = {1, 1, 1, .2}
 	Details.tooltip_key_overlay2 = {1, 1, 1, .5}
 	local headerColor = {1, 0.9, 0.0, 1}
@@ -748,7 +748,7 @@ end
 		bs_tooltip_table.damage_total = total
 
 		--Details:FormatCooltipForSpells()
-		GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\Details\\images\\bar_serenity")
+		GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\DamageMeterForever\\images\\bar_serenity")
 
 		local spellname, _, spellicon = select(1, _GetSpellInfo(from_spell))
 		--GameCooltip:AddLine(spellname .. " " .. Loc ["STRING_CUSTOM_ATTRIBUTE_DAMAGE"], nil, nil, headerColor, nil, 10)
@@ -777,11 +777,11 @@ end
 					GameCooltip:AddIcon(texture, 1, 1, iconSize, iconSize, l, r, t, b)
 				else
 					local texture, l, r, t, b = Details:GetClassIcon(class)
-					GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\classes_small_alpha", 1, 1,iconSize,iconSize, l, r, t, b)
+					GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha", 1, 1,iconSize,iconSize, l, r, t, b)
 				end
 
 			elseif(t[1] == Loc ["STRING_TARGETS_OTHER1"]) then
-				GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\classes_small_alpha", 1, 1,iconSize,iconSize, 0.25, 0.49609375, 0.75, 1)
+				GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha", 1, 1,iconSize,iconSize, 0.25, 0.49609375, 0.75, 1)
 			end
 		end
 
@@ -1241,7 +1241,7 @@ end
 			GameCooltip:AddLine(" ")
 			Details:AddTooltipReportLineText()
 
-			GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\Details\\images\\bar_serenity")
+			GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\DamageMeterForever\\images\\bar_serenity")
 			GameCooltip:ShowCooltip()
 		end
 	end
@@ -1659,7 +1659,7 @@ end
 		GameCooltip:AddLine(" ")
 		Details:AddTooltipReportLineText()
 
-		GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\Details\\images\\bar_serenity")
+		GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\DamageMeterForever\\images\\bar_serenity")
 
 		GameCooltip:ShowCooltip()
 
@@ -3950,16 +3950,16 @@ function Details:SetBarLeftText(bar, instance, enemy, arenaEnemy, arenaAlly, usi
 			if (instance.row_info.show_faction_icon) then
 				local sizeOffset = instance.row_info.faction_icon_size_offset
 				if (Details.faction_against == "Horde") then
-					local leftText = barNumber .. "|TInterface\\AddOns\\Details\\images\\icones_barra:" ..(instance.row_info.height + sizeOffset)..":"..(instance.row_info.height + sizeOffset) .. ":0:0:256:32:0:32:0:32|t"..self.displayName
+					local leftText = barNumber .. "|TInterface\\AddOns\\DamageMeterForever\\images\\icones_barra:" ..(instance.row_info.height + sizeOffset)..":"..(instance.row_info.height + sizeOffset) .. ":0:0:256:32:0:32:0:32|t"..self.displayName
 					if (usingCustomLeftText) then
-						bar.lineText1:SetText(stringReplace(instance.row_info.textL_custom_text, bar.colocacao, self.displayName, "|TInterface\\AddOns\\Details\\images\\icones_barra:" ..(instance.row_info.height + sizeOffset)..":"..(instance.row_info.height + sizeOffset) .. ":0:0:256:32:0:32:0:32|t", self, instance:GetCombat(), instance, leftText))
+						bar.lineText1:SetText(stringReplace(instance.row_info.textL_custom_text, bar.colocacao, self.displayName, "|TInterface\\AddOns\\DamageMeterForever\\images\\icones_barra:" ..(instance.row_info.height + sizeOffset)..":"..(instance.row_info.height + sizeOffset) .. ":0:0:256:32:0:32:0:32|t", self, instance:GetCombat(), instance, leftText))
 					else
 						bar.lineText1:SetText(leftText) --seta o texto da esqueda -- HORDA
 					end
 				else --alliance
-					local leftText = barNumber .. "|TInterface\\AddOns\\Details\\images\\icones_barra:" ..(instance.row_info.height + sizeOffset)..":"..(instance.row_info.height + sizeOffset) .. ":0:0:256:32:32:64:0:32|t"..self.displayName
+					local leftText = barNumber .. "|TInterface\\AddOns\\DamageMeterForever\\images\\icones_barra:" ..(instance.row_info.height + sizeOffset)..":"..(instance.row_info.height + sizeOffset) .. ":0:0:256:32:32:64:0:32|t"..self.displayName
 					if (usingCustomLeftText) then
-						bar.lineText1:SetText(stringReplace(instance.row_info.textL_custom_text, bar.colocacao, self.displayName, "|TInterface\\AddOns\\Details\\images\\icones_barra:" ..(instance.row_info.height + sizeOffset)..":"..(instance.row_info.height + sizeOffset) .. ":0:0:256:32:32:64:0:32|t", self, instance:GetCombat(), instance, leftText))
+						bar.lineText1:SetText(stringReplace(instance.row_info.textL_custom_text, bar.colocacao, self.displayName, "|TInterface\\AddOns\\DamageMeterForever\\images\\icones_barra:" ..(instance.row_info.height + sizeOffset)..":"..(instance.row_info.height + sizeOffset) .. ":0:0:256:32:32:64:0:32|t", self, instance:GetCombat(), instance, leftText))
 					else
 						bar.lineText1:SetText(leftText) --seta o texto da esqueda -- ALLY
 					end
@@ -5180,7 +5180,7 @@ function damageClass:ToolTip_Enemies(instanceObject, numero, barra, keydown)
 		GameCooltip:AddStatusBar(damageDone/top*100, 1, r, g, b, 1, false, enemies_background)
 	end
 
-	GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\Details\\images\\bar_serenity")
+	GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\DamageMeterForever\\images\\bar_serenity")
 
 	--damage done and heal
 	GameCooltip:AddLine(" ")
@@ -5489,18 +5489,18 @@ function damageClass:ToolTip_FriendlyFire(instancia, numero, barra, keydown)
 		end
 
 		GameCooltip:AddLine(Details:GetOnlyName(DamagedPlayers[i][1]), formatTooltipNumber(_, DamagedPlayers[i][2]).."("..format("%.1f", DamagedPlayers[i][2]/FriendlyFireTotal*100).."%)")
-		GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\espadas", nil, nil, lineHeight, lineHeight)
+		GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\espadas", nil, nil, lineHeight, lineHeight)
 		Details:AddTooltipBackgroundStatusbar()
 
 		if (classe == "UNKNOW") then
-			GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, lineHeight, lineHeight, unpack(Details.class_coords ["UNKNOW"]))
+			GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, lineHeight, lineHeight, unpack(Details.class_coords ["UNKNOW"]))
 		else
 			local specID = Details:GetSpec(DamagedPlayers[i][1])
 			if (specID) then
 				local texture, l, r, t, b = Details:GetSpecIcon(specID, false)
 				GameCooltip:AddIcon(texture, 1, 1, lineHeight, lineHeight, l, r, t, b)
 			else
-				GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, lineHeight, lineHeight, unpack(Details.class_coords [classe]))
+				GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, lineHeight, lineHeight, unpack(Details.class_coords [classe]))
 			end
 		end
 
@@ -5976,7 +5976,7 @@ end
 
 	if (icon) then
 		row.icone:SetTexture(icon)
-		if (icon == "Interface\\AddOns\\Details\\images\\classes_small") then
+		if (icon == "Interface\\AddOns\\DamageMeterForever\\images\\classes_small") then
 			row.icone:SetTexCoord(0.25, 0.49609375, 0.75, 1)
 		else
 			row.icone:SetTexCoord(0, 1, 0, 1)
@@ -6732,7 +6732,7 @@ function damageClass:MontaDetalhesEnemy(spellid, barra)
 			barra.textura:SetStatusBarColor(1, 1, 1, 1)
 		end
 
-		barra.icone:SetTexture("Interface\\AddOns\\Details\\images\\classes_small_alpha")
+		barra.icone:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha")
 		barra.icone:SetTexCoord(unpack(texCoords))
 
 		barra:Show() --mostra a barra

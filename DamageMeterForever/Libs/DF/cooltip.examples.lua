@@ -6,12 +6,12 @@ GameCooltip:AddLine(spellName, Details:ToK(spellTable.total)) --a name in the le
 GameCooltip:AddLine(spellName, Details:ToK(spellTable.total), 2) --a name in the left side and a value in the right side in the secondary tooltip frame, the parameter 2 indicates the secondary tooltip frame, if not provided it defaults to 1, which is the main tooltip frame
 GameCooltip:AddIcon(spellIcon, 1, 1, iconSize, iconSize) --add an icon in the main tooltip frame in the left of the tooltip line
 GameCooltip:AddStatusBar (100, 1, 0, 0, 0, 0.75) --add a status bar in latest line added in the main tooltip, with 100% width, red color and 75% opacity
-GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\Details\\images\\bar_serenity") --set the texture of all status bars in the tooltip
+GameCooltip:SetOption("StatusBarTexture", "Interface\\AddOns\\DamageMeterForever\\images\\bar_serenity") --set the texture of all status bars in the tooltip
 GameCooltip:SetOption("AlignAsBlizzTooltip", false) --set whether the tooltip should align like the default Blizzard tooltip
 GameCooltip:SetOption("AlignAsBlizzTooltipFrameHeightOffset", -6) --set the height offset when aligning as Blizzard tooltip
 GameCooltip:SetOption("YSpacingMod", -6) --set the vertical spacing modification
-GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\classes_small_alpha", 1, 1,iconSize,iconSize, l, r, t, b) --add an icon with custom texture coordinates (l, r, t, b)
-GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\classes_small_alpha", 1, 1,iconSize,iconSize, 0.25, 0.49609375, 0.75, 1) --add an icon with specific texture coordinates
+GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha", 1, 1,iconSize,iconSize, l, r, t, b) --add an icon with custom texture coordinates (l, r, t, b)
+GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\classes_small_alpha", 1, 1,iconSize,iconSize, 0.25, 0.49609375, 0.75, 1) --add an icon with specific texture coordinates
 GameCooltip:AddLine(" ") --empty line
 GameCooltip:SetOwner(thisLine, "bottom", "top", 0, 5) --:SetOwner(frame, myPoint, hisPoint, x, y) set the owner of the tooltip to a specific frame and anchor it to a specific point of that frame with an offset, here the tooltip bottom side is anchored to the top side of the line with an offset of 5 pixels in the y axis		GameCooltip:Show()
 GameCooltip:Show() --show the tooltip

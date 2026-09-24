@@ -3,10 +3,10 @@
 ## Author: Foofi
 ## Notes: Foofi damage meter for WoW Classic Forever (Details! core).
 ## Notes-ruRU: ÃÂÃÂ½ÃÂ°ÃÂ»ÃÂ¸ÃÂ·ÃÂ¸Ã‘â‚¬Ã‘Æ’ÃÂµÃ‘â€š Ã‘ÂÃ‘â‚¬ÃÂ°ÃÂ¶ÃÂµÃÂ½ÃÂ¸ÃÂµ ÃÂ² Ã‘â‚¬ÃÂµÃÂ°ÃÂ»Ã‘Å’ÃÂ½ÃÂ¾ÃÂ¼ ÃÂ²Ã‘â‚¬ÃÂµÃÂ¼ÃÂµÃÂ½ÃÂ¸, ÃÂ¿Ã‘â‚¬ÃÂµÃÂ´ÃÂ¾Ã‘ÂÃ‘â€šÃÂ°ÃÂ²ÃÂ»Ã‘ÂÃ‘Â ÃÂ¸ÃÂ³Ã‘â‚¬ÃÂ¾ÃÂºÃÂ°ÃÂ¼ Ã‘â€¡ÃÂ¸Ã‘ÂÃ‘â€šÃ‘â€¹ÃÂµ ÃÂ²ÃÂ¸ÃÂ·Ã‘Æ’ÃÂ°ÃÂ»Ã‘Å’ÃÂ½Ã‘â€¹ÃÂµ ÃÂ´ÃÂ°ÃÂ½ÃÂ½Ã‘â€¹ÃÂµ
-## SavedVariables: _detalhes_global, __details_backup, __details_debug
+## SavedVariables: _detalhes_global, __details_backup, __details_debug, ThreatForeverDB
 ## SavedVariablesPerCharacter: _detalhes_database
 ## OptionalDeps: Ace3, LibSharedMedia-3.0, LibWindow-1.1, LibDBIcon-1.0, NickTag-1.0, LibDataBroker-1.1, LibGraph-2.0
-## Version: 1.0.2
+## Version: 1.0.3
 ## IconTexture: Interface\AddOns\DamageMeterForever\images\minimap
 ## AddonCompartmentFunc: Details_OpenDefaultOptionsWindow
 
@@ -213,5 +213,10 @@ functions\loaddata.lua
 startup.lua
 
 functions\api2.lua
+
+# ThreatForever (embedded RAID plugin — not a separate addon)
+plugins\ThreatForever\enUS.lua
+plugins\ThreatForever\ptBR.lua
+plugins\ThreatForever\Details_TinyThreat.lua
 
 

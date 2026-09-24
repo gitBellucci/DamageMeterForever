@@ -1277,7 +1277,7 @@ do
 		local newChild = Details.StatusBar:CreateChildTable(instance, PDurability, childFrame)
 
 		local durabilityTexture = childFrame:CreateTexture(nil, "overlay")
-		durabilityTexture:SetTexture("Interface\\AddOns\\Details\\images\\icons")
+		durabilityTexture:SetTexture("Interface\\AddOns\\DamageMeterForever\\images\\icons")
 		durabilityTexture:SetPoint("right", childFrame.text.widget, "left", -2, -1)
 		durabilityTexture:SetWidth(10)
 		durabilityTexture:SetHeight(10)

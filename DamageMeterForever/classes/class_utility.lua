@@ -382,7 +382,7 @@ function Details.ShowDeathTooltip(instance, lineFrame, combatObject, deathTable)
 	end
 
 	gameCooltip:AddLine(deathTable[6] .. " " .. Loc["STRING_TIME_OF_DEATH"] , "-- -- -- ", 1, "white")
-	gameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\small_icons", 1, 1, nil, nil, .75, 1, 0, 1)
+	gameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\small_icons", 1, 1, nil, nil, .75, 1, 0, 1)
 	gameCooltip:AddStatusBar(0, 1, .5, .5, .5, .5, false, {value = 100, color = {.5, .5, .5, 1}, specialSpark = false, texture = [[Interface\AddOns\DamageMeterForever\images\bar4_vidro]]})
 
 	if (battleress) then
@@ -1450,7 +1450,7 @@ function atributo_misc:ToolTipDispell(instance, numero, barra)
 			if (classe == "UNKNOW") then
 				GameCooltip:AddIcon("Interface\\LFGFRAME\\LFGROLE_BW", nil, nil, 14, 14, .25, .5, 0, 1)
 			else
-				GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, 14, 14, unpack(Details.class_coords [classe]))
+				GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, 14, 14, unpack(Details.class_coords [classe]))
 			end
 		end
 	end
@@ -2160,7 +2160,7 @@ function atributo_misc:ToolTipDefensiveCooldowns(instance, numero, barra)
 						local texture, l, r, t, b = Details:GetSpecIcon(specID, false)
 						GameCooltip:AddIcon(texture, 1, 1, lineHeight, lineHeight, l, r, t, b)
 					else
-						GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, 14, 14, unpack(Details.class_coords [classe]))
+						GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, 14, 14, unpack(Details.class_coords [classe]))
 					end
 				end
 			end
@@ -2242,7 +2242,7 @@ function atributo_misc:ToolTipRess(instance, numero, barra)
 						local texture, l, r, t, b = Details:GetSpecIcon(specID, false)
 						GameCooltip:AddIcon(texture, 1, 1, lineHeight, lineHeight, l, r, t, b)
 					else
-						GameCooltip:AddIcon("Interface\\AddOns\\Details\\images\\classes_small", nil, nil, lineHeight, lineHeight, unpack(Details.class_coords [classe]))
+						GameCooltip:AddIcon("Interface\\AddOns\\DamageMeterForever\\images\\classes_small", nil, nil, lineHeight, lineHeight, unpack(Details.class_coords [classe]))
 					end
 				end
 			end

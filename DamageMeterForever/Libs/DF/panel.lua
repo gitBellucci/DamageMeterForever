@@ -3326,7 +3326,7 @@ local chart_panel_add_data = function(self, graphicData, color, name, elapsedTim
 		chartPanel:AddLabel(color or line_default_color, name, "graphic", #chartPanel.GData)
 	end
 
-	local newLineTexture = "Interface\\AddOns\\Details\\Libs\\LibGraph-2.0\\line"
+	local newLineTexture = "Interface\\AddOns\\DamageMeterForever\\Libs\\LibGraph-2.0\\line"
 
 	if (firstIndex) then
 		table.insert(LibGraphChartFrame.Data, 1, {Points = builtData, Color = color or line_default_color, lineTexture = newLineTexture, ElapsedTime = elapsedTime})

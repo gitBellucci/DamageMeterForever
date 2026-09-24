@@ -424,7 +424,7 @@ function Details.OpenPlaterIntegrationWindow()
         local platerTitle = DF:CreateLabel(titleBackground, "Plater Nameplates Integration", 16, "white")
         local platerDesc1 = DF:CreateLabel(titleBackground, "Add DPS and Damage information directly into the nameplate", 11, "silver")
         local platerDesc2 = DF:CreateLabel(titleBackground, "See how much damage the enemy is taking in real time!", 11, "silver")
-        local platerImage = DF:CreateImage(titleBackground, "Interface\\AddOns\\Details\\images\\plater_image")
+        local platerImage = DF:CreateImage(titleBackground, "Interface\\AddOns\\DamageMeterForever\\images\\plater_image")
         platerImage:SetSize(256, 64)
         
         platerImage:SetPoint("topright", f, "topright", -150, -35)
