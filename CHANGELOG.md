@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4
+
+- Single-folder install: Data Storage embedded in DamageMeterForever (no second addon)
+- CurseForge / release zip contains only `DamageMeterForever`
+
 ## 1.0.3
 
 - Embed ThreatForever inside DamageMeterForever (one addon install; Mode → Plugins → ThreatForever)

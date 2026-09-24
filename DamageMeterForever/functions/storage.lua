@@ -60,7 +60,26 @@ local _
 ---@field GetBestFromPlayer fun(difficulty:string, encounterId:number, role:role, dps:boolean, playerName:actorname):details_storage_unitresult, details_encounterkillinfo
 ---@field DBGuildSync fun()
 
-local CONST_ADDONNAME_DATASTORAGE = "Details_DataStorage"
+local CONST_ADDONNAME_DATASTORAGE = "DamageMeterForever" -- embedded (was Details_DataStorage LoD addon)
+
+local function IsStorageAddonReady()
+	return DETAILS_STORAGE_LOADED == true or type(DetailsDataStorage) == "table"
+end
+
+local function LoadStorageAddon()
+	if (IsStorageAddonReady()) then
+		return true
+	end
+	if (Details.CreateStorageDB) then
+		DetailsDataStorage = DetailsDataStorage or Details:CreateStorageDB()
+		if (DetailsDataStorage) then
+			DetailsDataStorage.Data = DetailsDataStorage.Data or {}
+			DETAILS_STORAGE_LOADED = true
+			return true
+		end
+	end
+	return false
+end
 
 local diffNumberToName = Details222.storage.DiffIdToName
 
@@ -83,8 +102,8 @@ end
 ---@return details_storage?
 function Details222.storage.OpenRaidStorage()
 	--check if the storage is already loaded
-	if (not C_AddOns.IsAddOnLoaded(CONST_ADDONNAME_DATASTORAGE)) then
-		local loaded, reason = C_AddOns.LoadAddOn(CONST_ADDONNAME_DATASTORAGE)
+	if (not IsStorageAddonReady()) then
+		local loaded, reason = LoadStorageAddon()
 		if (not loaded) then
 			return
 		end
@@ -796,7 +815,7 @@ end
 ---load the storage addon when the player leave combat, this function is also called from the parser when the player has its regen enabled
 function Details.ScheduleLoadStorage()
 	--check first if the storage is already loaded
-	if (C_AddOns.IsAddOnLoaded(CONST_ADDONNAME_DATASTORAGE)) then
+	if (IsStorageAddonReady()) then
 		Details.schedule_storage_load = nil
 		Details222.storageLoaded = true
 		return
@@ -810,8 +829,8 @@ function Details.ScheduleLoadStorage()
 		Details.schedule_storage_load = true
 		return
 	else
-		if (not C_AddOns.IsAddOnLoaded(CONST_ADDONNAME_DATASTORAGE)) then
-			local bSuccessLoaded, reason = C_AddOns.LoadAddOn(CONST_ADDONNAME_DATASTORAGE)
+		if (not IsStorageAddonReady()) then
+			local bSuccessLoaded, reason = LoadStorageAddon()
 			if (not bSuccessLoaded) then
 				if (Details.debug) then
 					print("|cFFFFFF00Details! Storage|r: can't load storage, may be the addon is disabled.")
@@ -822,7 +841,7 @@ function Details.ScheduleLoadStorage()
 		end
 	end
 
-	if (C_AddOns.IsAddOnLoaded(CONST_ADDONNAME_DATASTORAGE)) then
+	if (IsStorageAddonReady()) then
 		Details.schedule_storage_load = nil
 		Details222.storageLoaded = true
 		if (Details.debug) then
@@ -845,7 +864,7 @@ end
 function Details.OpenStorage()
 	--if the player is in combat, this function return false, if failed to load by other reason it returns nil
 	--check if the storage is already loaded
-	if (not C_AddOns.IsAddOnLoaded(CONST_ADDONNAME_DATASTORAGE)) then
+	if (not IsStorageAddonReady()) then
 		--can't open it during combat
 		if (InCombatLockdown() or UnitAffectingCombat("player")) then
 			if (Details.debug) then
@@ -854,7 +873,7 @@ function Details.OpenStorage()
 			return false
 		end
 
-		local loaded, reason = C_AddOns.LoadAddOn(CONST_ADDONNAME_DATASTORAGE)
+		local loaded, reason = LoadStorageAddon()
 		if (not loaded) then
 			if (Details.debug) then
 				print("|cFFFFFF00Details! Storage|r: can't load storage, may be the addon is disabled.")
@@ -864,7 +883,7 @@ function Details.OpenStorage()
 
 		local savedData = createStorageTables()
 
-		if (savedData and C_AddOns.IsAddOnLoaded(CONST_ADDONNAME_DATASTORAGE)) then
+		if (savedData and IsStorageAddonReady()) then
 			Details222.storageLoaded = true
 		end
 
@@ -880,8 +899,8 @@ Details.Database = {}
 ---@return details_storage?
 function Details.Database.LoadDB()
 	--check if the storage is not loaded yet and try to load it
-	if (not C_AddOns.IsAddOnLoaded(CONST_ADDONNAME_DATASTORAGE)) then
-		local loaded, reason = C_AddOns.LoadAddOn(CONST_ADDONNAME_DATASTORAGE)
+	if (not IsStorageAddonReady()) then
+		local loaded, reason = LoadStorageAddon()
 		if (not loaded) then
 			if (Details.debug) then
 				print("|cFFFFFF00Details! Storage|r: can't save the encounter, couldn't load DataStorage, may be the addon is disabled.")

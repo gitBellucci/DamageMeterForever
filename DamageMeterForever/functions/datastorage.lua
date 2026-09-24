@@ -4,30 +4,30 @@ DETAILS_STORAGE_VERSION = 7
 function Details:CreateStorageDB()
 	DetailsDataStorage = {
 		VERSION = DETAILS_STORAGE_VERSION,
-		normal = {}, --raid difficulties
-		heroic = {}, --raid difficulties
-		mythic = {}, --raid difficulties
-		--[14] = {}, --normal mode (raid)
-		--[15] = {}, --heroic mode (raid)
-		--[16] = {}, --mythic mode (raid)
+		normal = {},
+		heroic = {},
+		mythic = {},
 		["totalkills"] = {},
-		["mythic_plus"] = {}, --(dungeons)
-		["saved_encounters"] = {}, --(a segment)
+		["mythic_plus"] = {},
+		["saved_encounters"] = {},
 	}
 	return DetailsDataStorage
 end
 
+-- Embedded in DamageMeterForever (no separate LoadOnDemand addon).
 local f = CreateFrame("frame", nil, UIParent)
 f:Hide()
 f:RegisterEvent("ADDON_LOADED")
 
 f:SetScript("OnEvent", function(self, event, addonName)
-	if (addonName == "DamageMeterForever_DataStorage") then
+	if (addonName == "DamageMeterForever" or addonName == "DamageMeterForever_DataStorage" or addonName == "Details_DataStorage") then
 		DetailsDataStorage = DetailsDataStorage or Details:CreateStorageDB()
-		DetailsDataStorage.Data = {}
+		DetailsDataStorage.Data = DetailsDataStorage.Data or {}
 
-		if (DetailsDataStorage.VERSION < DETAILS_STORAGE_VERSION) then
+		if (DetailsDataStorage.VERSION and DetailsDataStorage.VERSION < DETAILS_STORAGE_VERSION) then
 			table.wipe(DetailsDataStorage)
+			DetailsDataStorage = Details:CreateStorageDB()
+		elseif (not DetailsDataStorage.VERSION) then
 			DetailsDataStorage = Details:CreateStorageDB()
 		end
 
@@ -36,6 +36,8 @@ f:SetScript("OnEvent", function(self, event, addonName)
 		end
 
 		DETAILS_STORAGE_LOADED = true
+		if (Details222) then
+			Details222.storageLoaded = true
+		end
 	end
 end)
-

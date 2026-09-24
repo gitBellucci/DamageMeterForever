@@ -6,7 +6,7 @@
 
 Foofi damage meter for [WoW Classic Forever](https://worldofforever.com/).
 
-Built on the [Details!](https://github.com/Tercioo/Details-Damage-Meter) core (Terciob), adapted for Forever secret API and **C_DamageMeter**. **ThreatForever** is included (Mode → Plugins).
+Built on the [Details!](https://github.com/Tercioo/Details-Damage-Meter) core (Terciob), adapted for Forever secret API and **C_DamageMeter**. **ThreatForever** and raid storage are included in the same addon.
 
 <p align="center">
   <img src="docs/ingame.png" alt="Damage Meter Forever in combat" width="420">
@@ -16,21 +16,16 @@ Built on the [Details!](https://github.com/Tercioo/Details-Damage-Meter) core (T
   <img src="docs/options.png" alt="Damage Meter Forever options" width="720">
 </p>
 
-## Package contents
-
-| Folder (exact name required) | Addon list title |
-|------------------------------|------------------|
-| `DamageMeterForever` | **Damage Meter Forever** (includes ThreatForever) |
-| `DamageMeterForever_DataStorage` | **Damage Meter Forever: Storage** |
-
 ## Install
 
-Prefer the [release zip](https://github.com/gitBellucci/DamageMeterForever/releases/latest). Do **not** use GitHub’s green **Code → Download ZIP** unless you rename folders.
+One folder only: **`DamageMeterForever`**.
 
-1. Extract so you have exactly **`DamageMeterForever`** and **`DamageMeterForever_DataStorage`**
-2. Put both in `World of Warcraft\_classic_beta_\Interface\AddOns\`
-3. Remove any old `Details` / `Details_DataStorage` / `Details_TinyThreat` / standalone `ThreatForever` folders
-4. Fully restart WoW and enable both addons
+Prefer the [release zip](https://github.com/gitBellucci/DamageMeterForever/releases/latest). Do **not** use GitHub’s green **Code → Download ZIP** unless you rename the folder.
+
+1. Extract so the folder is named exactly **`DamageMeterForever`**
+2. Put it in `World of Warcraft\_classic_beta_\Interface\AddOns\`
+3. Remove any old `Details`, `Details_DataStorage`, `Details_TinyThreat`, `ThreatForever`, or `DamageMeterForever_DataStorage` folders
+4. Fully restart WoW and enable **Damage Meter Forever**
 
 ## Use
 

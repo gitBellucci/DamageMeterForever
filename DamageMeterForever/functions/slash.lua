@@ -363,8 +363,7 @@ function SlashCmdList.DETAILS (msg, editbox)
 
 	elseif (msg == "load") then
 		print(DetailsDataStorage)
-		local loaded, reason = LoadAddOn ("Details_DataStorage")
-		print(loaded, reason, DetailsDataStorage)
+		print("storage embedded:", DETAILS_STORAGE_LOADED, DetailsDataStorage)
 
 	elseif (msg == "chaticon") then
 		Details:Msg("|TInterface\\AddOns\\DamageMeterForever\\images\\icones_barra:" .. 14 .. ":" .. 14 .. ":0:0:256:32:0:32:0:32|tteste")
