@@ -1,0 +1,6 @@
+*.zip
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+**/_forever_standalone_backup/

@@ -1,0 +1,13 @@
+## Interface: 16001, 16000, 11601
+## Title: DamageForever: Storage
+## Notes: Stores information for DamageForever.
+## Author: Foofi
+## Version: 1.0.0
+## DefaultState: Enabled
+## LoadOnDemand: 1
+## Dependencies: Details
+## SavedVariables: DetailsDataStorage
+## IconTexture: Interface\AddOns\Details\images\minimap
+## X-Flavor: Forever
+
+Details_DataStorage.lua
