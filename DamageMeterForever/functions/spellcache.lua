@@ -699,7 +699,18 @@ do
 
 	--overwrite for API GetSpellInfo function
 	Details.getspellinfo = function(spellId)
-		return unpack(Details.spellcache[spellId]) --won't be nil due to the __index metatable in the spellcache table
+		local info = Details.spellcache and Details.spellcache[spellId]
+		if (type(info) ~= "table") then
+			return "Unknown", 1, [[Interface\InventoryItems\WoWUnknownItem01]]
+		end
+		local spellName, rank, spellIcon = info[1], info[2], info[3]
+		if (not spellName or spellName == "") then
+			spellName = "Unknown"
+		end
+		if (not spellIcon or spellIcon == "") then
+			spellIcon = [[Interface\InventoryItems\WoWUnknownItem01]]
+		end
+		return spellName, rank or 1, spellIcon
 	end
 	Details.GetSpellInfo = Details.getspellinfo
 

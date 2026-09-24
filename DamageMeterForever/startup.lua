@@ -70,20 +70,24 @@ function Details222.StartUp.StartMeUp()
 	if detailsFramework.IsAddonApocalypseWow() then
 		Details.auto_swap_to_dynamic_overall = false
 
-		if (Details.breakdown_spell_tab.spellcontainer_headers["casts"]) then
-			Details.breakdown_spell_tab.spellcontainer_headers["casts"].enabled = false
-		end
-		if (Details.breakdown_spell_tab.spellcontainer_headers["critpercent"]) then
-			Details.breakdown_spell_tab.spellcontainer_headers["critpercent"].enabled = false
-		end
-		if (Details.breakdown_spell_tab.spellcontainer_headers["hits"]) then
-			Details.breakdown_spell_tab.spellcontainer_headers["hits"].enabled = false
-		end
-		if (Details.breakdown_spell_tab.spellcontainer_headers["castavg"]) then
-			Details.breakdown_spell_tab.spellcontainer_headers["castavg"].enabled = false
-		end
-		if (Details.breakdown_spell_tab.spellcontainer_headers["uptime"]) then
-			Details.breakdown_spell_tab.spellcontainer_headers["uptime"].enabled = false
+		local spellTab = Details.breakdown_spell_tab
+		local headers = spellTab and spellTab.spellcontainer_headers
+		if (headers) then
+			if (headers["casts"]) then
+				headers["casts"].enabled = false
+			end
+			if (headers["critpercent"]) then
+				headers["critpercent"].enabled = false
+			end
+			if (headers["hits"]) then
+				headers["hits"].enabled = false
+			end
+			if (headers["castavg"]) then
+				headers["castavg"].enabled = false
+			end
+			if (headers["uptime"]) then
+				headers["uptime"].enabled = false
+			end
 		end
 	end
 

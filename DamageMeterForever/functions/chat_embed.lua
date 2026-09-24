@@ -14,9 +14,10 @@ Details.chat_embed.startup = true
 
 Details.chat_embed.hook_settabname = function(frame, name, doNotSave)
     if (not doNotSave) then
-        if (Details.chat_tab_embed.enabled and Details.chat_tab_embed.tab_name ~= "") then
+        local embed = Details.chat_tab_embed
+        if (embed and embed.enabled and embed.tab_name ~= "") then
             if (Details.chat_tab_embed_onframe == frame) then
-                Details.chat_tab_embed.tab_name = name
+                embed.tab_name = name
                 Details:DelayOptionsRefresh(Details:GetInstance(1))
             end
         end
@@ -24,10 +25,11 @@ Details.chat_embed.hook_settabname = function(frame, name, doNotSave)
 end
 
 Details.chat_embed.hook_closetab = function(frame, fallback)
-    if (Details.chat_tab_embed.enabled and Details.chat_tab_embed.tab_name ~= "") then
+    local embed = Details.chat_tab_embed
+    if (embed and embed.enabled and embed.tab_name ~= "") then
         if (Details.chat_tab_embed_onframe == frame) then
-            Details.chat_tab_embed.enabled = false
-            Details.chat_tab_embed.tab_name = ""
+            embed.enabled = false
+            embed.tab_name = ""
             Details.chat_tab_embed_onframe = nil
             Details:DelayOptionsRefresh(Details:GetInstance(1))
             Details.chat_embed:ReleaseEmbed()
