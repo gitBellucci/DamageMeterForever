@@ -1,0 +1,12 @@
+## Interface: 16001, 16000, 11601
+## Title: Damage Meter Forever: Storage
+## Notes: Stores information for Damage Meter Forever.
+## Author: Foofi
+## DefaultState: Enabled
+## LoadOnDemand: 1
+## Dependencies: DamageMeterForever
+## SavedVariables: DetailsDataStorage
+## IconTexture: Interface\AddOns\DamageMeterForever\images\minimap
+## X-Flavor: Forever
+
+Details_DataStorage.lua

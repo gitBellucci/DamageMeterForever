@@ -1,0 +1,19 @@
+## Interface: 16001, 16000, 11601
+## Title: ThreatForever
+## Notes: Foofi threat meter for Damage Meter Forever. Mode / Plugins -> ThreatForever.
+## Author: Foofi
+## Version: 1.0.0
+## RequiredDeps: DamageMeterForever
+## OptionalDeps: Ace3, EllesmereUI
+## SavedVariables: ThreatForeverDB
+## IconTexture: Interface\AddOns\ThreatForever\Logo.png
+## Category-enUS: Combat
+## X-Flavor: Forever
+
+#@no-lib-strip@
+embeds.xml
+#@end-no-lib-strip@
+
+enUS.lua
+ptBR.lua
+Details_TinyThreat.lua
