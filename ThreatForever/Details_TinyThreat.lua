@@ -1020,7 +1020,7 @@ function ThreatMeter:OnEvent (_, event, ...)
 				local install, saveddata = _G.Details:InstallPlugin (
 					"RAID",
 					Loc["STRING_PLUGIN_NAME"],
-					"Interface\\AddOns\\Details_TinyThreat\\Logo.png",
+					"Interface\\AddOns\\ThreatForever\\Logo.png",
 					ThreatMeter,
 					"DETAILS_PLUGIN_THREAT_FOREVER",
 					MINIMAL_DETAILS_VERSION_REQUIRED,
