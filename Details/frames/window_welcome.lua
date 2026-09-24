@@ -1620,22 +1620,22 @@ function Details:OpenDamageForeverWelcome()
 	close:SetText("Let's go")
 	close:SetScript("OnClick", function()
 		window:Hide()
-		if (Details.skin ~= "DamageForever") then
-			Details.skin = "DamageForever"
+		if (Details.skin ~= "Damage Meter Forever") then
+			Details.skin = "Damage Meter Forever"
 			for _, instance in Details:ListInstances() do
 				if (instance and instance.ativa and instance.ChangeSkin) then
-					pcall(function() instance:ChangeSkin("DamageForever") end)
+					pcall(function() instance:ChangeSkin("Damage Meter Forever") end)
 				end
 			end
 		end
 	end)
 
 	-- Apply skin immediately when splash opens
-	Details.skin = "DamageForever"
+	Details.skin = "Damage Meter Forever"
 	Details.damageforever_skin_applied = true
 	for _, instance in Details:ListInstances() do
 		if (instance and instance.ativa and instance.ChangeSkin) then
-			pcall(function() instance:ChangeSkin("DamageForever") end)
+			pcall(function() instance:ChangeSkin("Damage Meter Forever") end)
 		end
 	end
 end

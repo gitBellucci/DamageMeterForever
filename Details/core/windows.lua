@@ -1201,7 +1201,7 @@
 
 	--interface menu
 	local f = CreateFrame("frame", "DetailsInterfaceOptionsPanel", UIParent,"BackdropTemplate")
-	f.name = "DamageForever"
+	f.name = "Damage Meter Forever"
 	f.logo = f:CreateTexture(nil, "overlay")
 	f.logo:SetPoint("center", f, "center", 0, 0)
 	f.logo:SetPoint("top", f, "top", 25, 56)
@@ -1430,7 +1430,7 @@
 					end
 				end,
 				OnTooltipShow = function(tooltip)
-					tooltip:AddLine("DamageForever", 0.047, 0.824, 0.616)
+					tooltip:AddLine("Damage Meter Forever", 0.047, 0.824, 0.616)
 					if (Details.minimap.onclick_what_todo == 1) then
 						tooltip:AddLine(Loc ["STRING_MINIMAP_TOOLTIP1"])
 					elseif (Details.minimap.onclick_what_todo == 2) then

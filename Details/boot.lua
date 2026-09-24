@@ -109,7 +109,7 @@
 
 		function Details222.DebugMsg(...)
 			if (Details.debug) then
-				print("|cff0cd29dDamageForever Debug:|r", ...)
+				print("|cff0cd29dDamage Meter Forever Debug:|r", ...)
 			end
 		end
 
@@ -765,10 +765,10 @@ do
 
 	Loc["STRING_VERSION_LOG"] = newsString
 
-	Loc ["STRING_DETAILS1"] = "|cff0cd29dDamageForever|r: "
-	Loc ["STRING_WELCOME_1"] = "|cFFFFFFFFWelcome to DamageForever|r\nFoofi damage meter for Classic Forever."
+	Loc ["STRING_DETAILS1"] = "|cff0cd29dDamage Meter Forever|r: "
+	Loc ["STRING_WELCOME_1"] = "|cFFFFFFFFWelcome to Damage Meter Forever|r\nFoofi damage meter for Classic Forever."
 	Loc ["STRING_WELCOME_38"] = "You're set."
-	Loc ["STRING_WELCOME_39"] = "Thanks for using DamageForever by Foofi.\n\nRight-click the window for modes · gear icon for options · /df or /details"
+	Loc ["STRING_WELCOME_39"] = "Thanks for using Damage Meter Forever by Foofi.\n\nRight-click the window for modes · gear icon for options · /df or /details"
 	Loc ["STRING_WELCOME_42"] = "Quick look"
 	Loc ["STRING_WELCOME_69"] = "Skip"
 
@@ -990,7 +990,7 @@ do
 
 		--armazena instancias inativas
 			_detalhes.unused_instances = {}
-			_detalhes.default_skin_to_use = "DamageForever"
+			_detalhes.default_skin_to_use = "Damage Meter Forever"
 			_detalhes.instance_title_text_timer = {}
 		--player detail skin
 			_detalhes.playerdetailwindow_skins = {}
@@ -1703,7 +1703,7 @@ do
 	--key binds
 	--[=
 		--header
-			_G ["BINDING_HEADER_Details"] = "DamageForever"
+			_G ["BINDING_HEADER_Details"] = "Damage Meter Forever"
 			_G ["BINDING_HEADER_DETAILS_KEYBIND_SEGMENTCONTROL"] = Loc ["STRING_KEYBIND_SEGMENTCONTROL"]
 			_G ["BINDING_HEADER_DETAILS_KEYBIND_SCROLLING"] = Loc ["STRING_KEYBIND_SCROLLING"]
 			_G ["BINDING_HEADER_DETAILS_KEYBIND_WINDOW_CONTROL"] = Loc ["STRING_KEYBIND_WINDOW_CONTROL"]

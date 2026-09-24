@@ -1052,7 +1052,7 @@ local default_profile = {
 
 	--skins
 		standard_skin = false,
-		skin = "DamageForever",
+		skin = "Damage Meter Forever",
 		profile_save_pos = true,
 		options_group_edit = true,
 

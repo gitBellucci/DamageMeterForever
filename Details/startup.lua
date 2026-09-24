@@ -442,29 +442,32 @@ function Details222.StartUp.StartMeUp()
 	function Details:AnnounceStartup()
 		Details:SendEvent("DETAILS_STARTED", "SEND_TO_ALL")
 
-		-- Forever: always ensure DamageForever skin is applied once (saved profiles often stay on Minimalistic)
+		-- Forever: ensure Damage Meter Forever skin (migrate old DamageForever id once)
 		if (DetailsFramework.IsForeverWow and DetailsFramework.IsForeverWow()) then
-			if (not Details.damageforever_skin_v2) then
-				Details.damageforever_skin_v2 = true
+			if (Details.skin == "DamageForever") then
+				Details.skin = "Damage Meter Forever"
+			end
+			if (not Details.damageforever_skin_v3) then
+				Details.damageforever_skin_v3 = true
 				Details.damageforever_skin_applied = false
 			end
 			if (not Details.damageforever_skin_applied) then
 				Details.damageforever_skin_applied = true
-				Details.skin = "DamageForever"
+				Details.skin = "Damage Meter Forever"
 				for _, instance in Details:ListInstances() do
 					if (instance and instance.ativa and instance.ChangeSkin) then
-						pcall(function() instance:ChangeSkin("DamageForever") end)
+						pcall(function() instance:ChangeSkin("Damage Meter Forever") end)
 					end
 				end
 			end
 		elseif (not Details.damageforever_branded) then
 			Details.damageforever_branded = true
 			local skin = Details.skin
-			if (skin == "Minimalistic" or skin == "Minimalistic v2" or not skin) then
-				Details.skin = "DamageForever"
+			if (skin == "Minimalistic" or skin == "Minimalistic v2" or skin == "DamageForever" or not skin) then
+				Details.skin = "Damage Meter Forever"
 				for _, instance in Details:ListInstances() do
 					if (instance and instance.ativa and instance.ChangeSkin) then
-						pcall(function() instance:ChangeSkin("DamageForever") end)
+						pcall(function() instance:ChangeSkin("Damage Meter Forever") end)
 					end
 				end
 			end
@@ -635,7 +638,7 @@ function Details222.StartUp.StartMeUp()
 
 			--version
 			Details.FadeHandler.Fader(instance._version, 0)
-			instance._version:SetText("DamageForever " .. Details.userversion)
+			instance._version:SetText("Damage Meter Forever " .. Details.userversion)
 			instance._version:SetTextColor(1, 1, 1, .95)
 			instance._version:SetPoint("bottomleft", instance.baseframe, "bottomleft", 5, 1)
 

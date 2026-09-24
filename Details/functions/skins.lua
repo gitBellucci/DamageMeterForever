@@ -539,12 +539,12 @@ local addonName, Details222 = ...
 	})
 
 	-- Foofi Forever brand skin (teal accent over Minimalistic base)
-	_detalhes:InstallSkin ("DamageForever", {
+	_detalhes:InstallSkin ("Damage Meter Forever", {
 		file = [[Interface\AddOns\Details\images\skins\classic_skin_v1]],
 		author = "Foofi",
 		version = "1.0",
 		site = "worldofforever.com",
-		desc = "DamageForever — Foofi teal chrome, class-colored bars.",
+		desc = "Damage Meter Forever — Foofi teal chrome, class-colored bars.",
 		no_cache = true,
 
 		micro_frames = {

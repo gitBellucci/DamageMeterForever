@@ -67,7 +67,7 @@ function Details222.OptionsPanel.InitializeOptionsWindow(instance)
     end)
     closeButton:SetPoint("topright", optionsFrame, "topright", -5, -5)
 
-    local titleText = detailsFramework:NewLabel(optionsFrame, nil, "$parentTitleLabel", "title", "DamageForever", "GameFontHighlightLeft", 14, {12/255, 210/255, 157/255})
+    local titleText = detailsFramework:NewLabel(optionsFrame, nil, "$parentTitleLabel", "title", "Damage Meter Forever", "GameFontHighlightLeft", 14, {12/255, 210/255, 157/255})
     titleText:SetPoint("top", optionsFrame, "top", 0, -5)
 
     --[=[

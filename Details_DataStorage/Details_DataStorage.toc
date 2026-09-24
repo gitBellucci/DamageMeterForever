@@ -1,6 +1,6 @@
 ## Interface: 16001, 16000, 11601
-## Title: DamageForever: Storage
-## Notes: Stores information for DamageForever.
+## Title: Damage Meter Forever: Storage
+## Notes: Stores information for Damage Meter Forever.
 ## Author: Foofi
 ## DefaultState: Enabled
 ## LoadOnDemand: 1
